@@ -19,7 +19,7 @@ int main()
 		for (int j = 0; j < col; j++)
 		{
 			arr[i][j] = rand() % 10 + 1;
-			std::cout << arr[i][j] << " ";
+			std::cout << arr[i][j] << " "; 
 			suuum += arr[i][j];
 
 		}
