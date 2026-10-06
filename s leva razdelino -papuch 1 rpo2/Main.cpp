@@ -1,33 +1,109 @@
 #include <iostream>
 #include <Windows.h>
+
+void Setarray(int arr[], int size);
+void Setarray(double arr[], int size);
+void Setarray(char arr[], int size);
+void Printarray(int arr[], int size);
+void Printarray(double arr[], int size);
+void Printarray(char arr[], int size);
+
+template<typename T1, typename T2>
+T1 Substruct(T1 one, T2 two)
+{
+	return one - two;
+}
+
+int fak(int num)
+{
+	if (num < 0)
+	{
+		return 0;
+	}
+	if (num == 0)
+	{
+		return 1;
+	}
+	return num * fak(num -1)
+
+
+}
+
+
+
+
+
+
 int main()
 {
 	SetConsoleCP(CP_UTF8);
 	SetConsoleOutputCP(CP_UTF8);
 	srand(time(NULL));
 
-	const int row = 4;
-	const int col = 4;
-	int suuum = 0;
+	const int size = 6;
 
-	int arr[row][col]{};
+	int argo[size];
+	double arbze[size];
+	char gore[size];
 
-	arr[0][1] = 5;
-
-	for (int i = 0; i < row; i++)
-	{
-		for (int j = 0; j < col; j++)
-		{
-			arr[i][j] = rand() % 10 + 1;
-			std::cout << arr[i][j] << " "; 
-			suuum += arr[i][j];
-
-		}
-		std::cout << "\t|"<< suuum << "\n";
-	}
-	std::cout << "-----------------------\n\n";
-
+	Setarray(argo, size);
+	Setarray(arbze, size);
+	Setarray(gore, size);
+	Printarray(argo, size);
+	Printarray(arbze, size);
+	Printarray(gore, size);
 	return 0;
+}
+
+
+
+
+void Setarray(int arr[], int size)
+{
+	for (int i = 0; i < size; i++)
+	{
+		arr[i] = rand() % 10 + 1;
+	}
+}
+void Setarray(double arr[], int size)
+{
+	for (int i = 0; i < size; i++)
+	{
+		arr[i] = rand() % 10 + 0.5;
+	}
+
+}
+void Setarray(char arr[], int size)
+{
+	for (int i = 0; i < size; i++)
+	{
+		arr[i] = rand() % 26 + 'A';
+	}
+
+}
+void Printarray(int arr[], int size)
+{
+	for (int i = 0; i < size; i++)
+	{
+		std::cout << arr[i] << " ";
+	}
+	std::cout << "\n";
+}
+void Printarray(double arr[], int size)
+{
+	for (int i = 0; i < size; i++)
+	{
+		std::cout << arr[i] << " ";
+	}
+	std::cout << "\n";
+}
+void Printarray(char arr[], int size)
+{
+	for (int i = 0; i < size; i++)
+	{
+		std::cout << arr[i] << " ";
+	}
+	std::cout << "\n";
 }
 
 
@@ -66,7 +142,16 @@ long double		4141098421842189024					3.4-3932 -- 1.1E+4932
 Сравнительные: < > <= >= == !=			<=>
 Логические:  && (и)		|| (или)	 ! (не)
 
-ТАБУ:	goto нельзя		and or not int Имя переменной 
+ТАБУ:	goto нельзя		and or not int Имя переменной
+
+
+Функция
+
+template<typename T1, typename T2>
+T1 Substruct(T1 one, T2 two)
+{
+	return one - two;
+}
 */
 // конвентор
 /*
@@ -130,11 +215,11 @@ long double		4141098421842189024					3.4-3932 -- 1.1E+4932
 		}
 */
 // дискриминант 
-/*	
+/*
 
 	double a = 0, b = 0, c = 0, D = 0, x1= 0, x2 = 0;
-	
-	
+
+
 	std::cout << "\nрешение арбуза\n";
 	std::cout << "ax^2+bx+c=0\n";
 
@@ -149,7 +234,7 @@ long double		4141098421842189024					3.4-3932 -- 1.1E+4932
 
 	std::cout << a << "x^2 + " << b << "x + " << c << " = 0\n\n";
 	D = std::pow(b, 2) - 4 * a * c;
-	
+
 	std::cout << "дискриминант:" << D << "\n\n";
 
 	if ( D < 0)
@@ -171,8 +256,8 @@ long double		4141098421842189024					3.4-3932 -- 1.1E+4932
 */
 // игра
 /*
- 
- 	int choose = 0, hp = 0, number = 0, random = 0;
+
+	int choose = 0, hp = 0, number = 0, random = 0;
 	int maxhp = 25, maxhphard = 25;
 
 	while (true)
@@ -361,4 +446,70 @@ std::cout << "\nотрицательное: " << duna << " \n";
 
 double sos = (arbyz + duna) / 10.0;
 std::cout << "средний " << sos << "\n\n";
+*/
+// массив 2 д таблица
+/*
+	const int row = 4;
+	const int col = 4;
+	int suuum = 0;
+
+	int arr[row][col]{};
+
+	arr[0][1] = 5;
+
+	for (int i = 0; i < row; i++)
+	{
+		for (int j = 0; j < col; j++)
+		{
+			arr[i][j] = rand() % 10 + 1;
+			std::cout << arr[i][j] << " ";
+			suuum += arr[i][j];
+
+		}
+		std::cout << "\t|"<< suuum << "\n";
+	}
+	std::cout << "-----------------------\n\n";
+
+	return 0;
+}
+*/
+// массив с изменением переменной
+/*
+	int arr[10]{};
+
+	for (int i = 0; i < 10; i++)
+	{
+		arr[i] = rand() % 6;
+
+	}
+	for (int i = 0; i < 10; i++)
+	{
+		std::cout << arr[i] << " ";
+	}
+	std::cout << "\n\n";
+
+
+	for (int i = 0; i < 10; i++)
+	{
+		if (arr[i] > 0)
+		{
+			std::cout << arr[i] << " ";
+		}
+
+	}
+	std::cout << " | ";
+	for (int i = 0; i < 10; i++)
+	{
+		if (arr[i] == 0)
+		{
+			arr[i] = -1;
+			std::cout << arr[i] << " ";
+		}
+	}
+
+
+	std::cout << "\n\n";
+
+	return 0;
+}
 */
